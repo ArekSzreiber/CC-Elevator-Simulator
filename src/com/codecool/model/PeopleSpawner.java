@@ -25,9 +25,6 @@ public class PeopleSpawner implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            if(i == numberOfPeopleToCreate - 1) {
-                System.out.println("i chuj   (koniec programu)");
-            }
         }
     }
 }
