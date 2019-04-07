@@ -122,7 +122,7 @@ public class Elevator implements Runnable {
         return false;
     }
 
-    private int getNumberOfLoadingTasks(){
+    private int getNumberOfLoadingTasks() {
         int counter = 0;
         for (Task task : tasks) {
             if (task.hasToLoad()) {
@@ -132,7 +132,7 @@ public class Elevator implements Runnable {
         return counter;
     }
 
-    private boolean hasFreeSlots(){
+    private boolean hasFreeSlots() {
         return (people.size() + getNumberOfLoadingTasks()) < CAPACITY;
     }
 
@@ -174,7 +174,7 @@ public class Elevator implements Runnable {
             newPassenger = floor.popPersonFromAnyQueue();
         }
         if (newPassenger != null) {
-            support.firePropertyChange("passengersNumber", people.size(), people.size()+1);
+            support.firePropertyChange("passengersNumber", people.size(), people.size() + 1);
             people.add(newPassenger);
         }
         return newPassenger;

@@ -50,10 +50,12 @@ public class Building {
     }
 
     public Floor getHigherFloor(Floor floor) {
-        return floors[floor.getFloorNumber() + 1];
-    }//zaebpieczyc jw.
-
-
+        if (floors[floor.getFloorNumber() + 1] == null) {
+            return floors[floor.getFloorNumber()];
+        } else {
+            return floors[floor.getFloorNumber() + 1];
+        }
+    }
 
     public LinkedList<Elevator> getAvailableElevators(int destinationFloorNumber) {
         LinkedList<Elevator> availableElevators = new LinkedList<>();

@@ -7,6 +7,6 @@ public class Config {
     public final static int WINDOW_WIDTH = 1300;
     public final static int ELEVATOR_CAPACITY = 3;
     public final static int PERSON_WIDTH = 30;
-    public final static double FLOOR_HEIGHT = (double)WINDOW_HEIGHT / FLOORS_NUMBER;
+    public final static double FLOOR_HEIGHT = (double) WINDOW_HEIGHT / FLOORS_NUMBER;
     public final static double ELEVATOR_WIDTH = PERSON_WIDTH * ELEVATOR_CAPACITY;
 }
