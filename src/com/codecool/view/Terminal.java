@@ -7,7 +7,7 @@ import java.util.List;
 public class Terminal {
 
     public static void buildingCreationMessage(int nrOfFloors, int nrOfElevators) {
-        System.out.println("Building: " + nrOfFloors + " floors and " + nrOfElevators + " elevators. Here the game begins...\n");
+        System.out.println("Building: " + nrOfFloors + " floors and " + nrOfElevators + " elevators.\n");
     }
 
     public static void confirmTaskAssignmentToElevator(Elevator elevator, Task task) {
@@ -89,5 +89,9 @@ public class Terminal {
 
     public static void transportedPersonMessage(Person person, Elevator elevator) {
         System.out.println("Person " + person.getName() + " successfully transported to floor " + person.getDestinationFloor() + " by " + elevator.getName() + ".");
+    }
+
+    public static void BuildingAlreadyExistsMessage() {
+        System.out.println("Building already exists!");
     }
 }

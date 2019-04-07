@@ -46,16 +46,13 @@ public class ElevatorSimulator {
         peopleSpawner = new PeopleSpawner(5, 11);
         spawnThread = new Thread(peopleSpawner);
         spawnThread.run();
-        System.out.println("Done");
 
         peopleSpawner = new PeopleSpawner(5000, 1);
         spawnThread = new Thread(peopleSpawner);
         spawnThread.run();
-        System.out.println("Done");
 
         peopleSpawner = new PeopleSpawner(20, 5);
         spawnThread = new Thread(peopleSpawner);
         spawnThread.run();
-        System.out.println("Done");
     }
 }

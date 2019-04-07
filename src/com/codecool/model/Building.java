@@ -26,7 +26,7 @@ public class Building {
         if (thisBuilding == null) {
             thisBuilding = new Building(Config.FLOORS_NUMBER, Config.ELEVATORS_NUMBER);
         } else {
-            System.out.println("Building already exists!");
+            Terminal.BuildingAlreadyExistsMessage();
         }
     }
 
@@ -39,7 +39,6 @@ public class Building {
         for (int i = 0; i < nrOfElevators; i++) {
             elevators[i] = new Elevator(floors[0], i);
         }
-        //Terminal.buildingCreationMessage(nrOfFloors, nrOfElevators);
     }
 
     public Floor getLowerFloor(Floor floor) {

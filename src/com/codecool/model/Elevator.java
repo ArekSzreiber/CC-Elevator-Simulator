@@ -24,13 +24,11 @@ public class Elevator implements Runnable {
         if (!thread.isAlive()) {
             thread = new Thread(this);
             thread.start();
-            System.out.println("Thread started");
         }
     }
 
     public void addTask(Task task) {
         newTasks.add(task);
-        //Terminal.confirmTaskAssignmentToElevator(this, task);
     }
 
     public Elevator(Floor floor, int elevatorNumber) {
@@ -186,7 +184,6 @@ public class Elevator implements Runnable {
             newPassenger = floor.popPersonFromAnyQueue();
         }
         if (newPassenger != null) {
-            //Terminal.personLoadMessage(this, newPassenger);
             support.firePropertyChange("passengersNumber", people.size(), people.size()+1);
             people.add(newPassenger);
         }
@@ -216,7 +213,6 @@ public class Elevator implements Runnable {
                 people.remove(person);
                 currentFloor.addToTransportedPeople(person);
                 support.firePropertyChange("passengersNumber", oldPassengersNumber, people.size());
-                //Terminal.transportedPersonMessage(person, this);
             }
         }
         removeUnloadingTasks(currentFloor.getFloorNumber());
@@ -234,7 +230,6 @@ public class Elevator implements Runnable {
         for (Task task : tasks) {
             if (task.hasToLoad() && task.getDestinationFloorNumber() == floorNumber) {
                 tasks.remove(task);
-                //System.out.println("<<<<<<<<<<<<< TASK REMOVED >>>>>>>");
                 return;
             }
         }
@@ -242,11 +237,8 @@ public class Elevator implements Runnable {
 
     @Override
     public void run() {
-        System.out.println(name + " start");
         takeNewTask();
         while (hasTasksOrPassengers()) {
-            //Terminal.showFloors();
-            //Terminal.showElevator(this);
             handleTask();
             try {
                 Thread.sleep(1000);
@@ -254,10 +246,6 @@ public class Elevator implements Runnable {
                 e.printStackTrace();
             }
         }
-        //Terminal.showFloors();
-        //Terminal.showElevator(this);
-        System.out.println(name + " shutdown");
-
     }
 
     private void takeNewTask() {
