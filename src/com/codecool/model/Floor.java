@@ -1,7 +1,5 @@
 package com.codecool.model;
 
-import com.codecool.view.FloorView;
-
 import java.util.LinkedList;
 import java.util.List;
 

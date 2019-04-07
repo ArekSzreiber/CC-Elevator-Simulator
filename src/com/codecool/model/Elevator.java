@@ -42,15 +42,6 @@ public class Elevator implements Runnable {
         support.addPropertyChangeListener(pcl);
     }
 
-    public void removePropertyChangeListener(PropertyChangeListener pcl) {
-        support.removePropertyChangeListener(pcl);
-    }
-
-    public void setFloor(Floor newFloor) {
-        support.firePropertyChange("floor", this.floor, newFloor);
-        this.floor = newFloor;
-    }
-
     public Direction getCurrentDirection() {
         int currentFloorNumber = this.floor.getFloorNumber();
         Task currentTask = getCurrentTask();
@@ -142,7 +133,6 @@ public class Elevator implements Runnable {
     }
 
     private boolean hasFreeSlots(){
-        //true if numberOfPassengers + numberOfLoadingTasks < CAPACITY
         return (people.size() + getNumberOfLoadingTasks()) < CAPACITY;
     }
 

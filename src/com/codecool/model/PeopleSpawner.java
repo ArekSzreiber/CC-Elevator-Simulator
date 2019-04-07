@@ -11,11 +11,6 @@ public class PeopleSpawner implements Runnable {
         this.numberOfPeopleToCreate = numberOfPeople;
     }
 
-    public PeopleSpawner(){
-        this.spawnInterval = 10000;
-        this.numberOfPeopleToCreate = 3;
-    }
-
     @Override
     public void run() {
         for (int i = 0; i < numberOfPeopleToCreate; i++) {

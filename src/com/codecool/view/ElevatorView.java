@@ -1,15 +1,12 @@
 package com.codecool.view;
 
 import com.codecool.controller.Config;
-import com.codecool.model.Elevator;
 import com.codecool.model.Floor;
-import com.codecool.model.Person;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.util.concurrent.LinkedBlockingQueue;
 
 public class ElevatorView extends Rectangle implements PropertyChangeListener {
     private Floor floor;
@@ -45,10 +42,6 @@ public class ElevatorView extends Rectangle implements PropertyChangeListener {
                     this.setFill(Color.WHITESMOKE);
             }
         }
-    }
-
-    public Floor getFloor() {
-        return floor;
     }
 
     public void setFloor(Floor floor) {
