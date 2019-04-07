@@ -37,22 +37,4 @@ public class ElevatorSimulator {
             theChosenElevator.activate();
         }
     }
-
-    public static void main(String[] args) {
-        Building.createBuilding();
-        PeopleSpawner peopleSpawner;
-        Thread spawnThread;
-
-        peopleSpawner = new PeopleSpawner(5, 11);
-        spawnThread = new Thread(peopleSpawner);
-        spawnThread.run();
-
-        peopleSpawner = new PeopleSpawner(5000, 1);
-        spawnThread = new Thread(peopleSpawner);
-        spawnThread.run();
-
-        peopleSpawner = new PeopleSpawner(20, 5);
-        spawnThread = new Thread(peopleSpawner);
-        spawnThread.run();
-    }
 }
