@@ -14,7 +14,7 @@ Your job is to create a simulation for the building's elevator system that will 
 ## Technologies
 * Java 8
     - JavaFX
-## Architectural patterns
+## Patterns
 - MVC
 - Observer
 
