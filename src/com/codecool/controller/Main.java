@@ -11,11 +11,9 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-
     public static void main(String[] args) {
         launch(args);
     }
-
 
     private static void prepareWindow(Stage stage) {
         stage.setTitle("Elevator Simulator");

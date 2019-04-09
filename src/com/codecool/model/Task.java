@@ -4,8 +4,8 @@ public class Task {
     private int destinationFloorNumber;
     private boolean loadPerson;
 
-    //TODO żeby task wiedział też ile osób przewozi
-    //albo jakie dokładnie osoby ma zbindowane
+    //TODO it should know how many people it is carrying
+    //or which person belongs to which task
     public boolean hasToLoad() {
         return loadPerson;
     }

@@ -21,12 +21,12 @@ public class Floor {
         } else {
             downQueue.add(person);
         }
-        //TODO info o zmianie w modelu
+        //TODO info about change in model
     }
 
     public void addToTransportedPeople(Person transportedPerson) {
         this.transportedPeople.add(transportedPerson);
-        //TODO info o zmianie w modelu
+        //TODO info about change in model
     }
 
     boolean isEmpty(Direction elevatorDirection) {

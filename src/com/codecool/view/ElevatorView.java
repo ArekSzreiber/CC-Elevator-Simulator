@@ -19,7 +19,7 @@ public class ElevatorView extends Rectangle implements PropertyChangeListener {
     }
 
     public void propertyChange(PropertyChangeEvent evt) {
-        if (evt.getPropertyName().equals("floor")) {//todo to zmienić na switch
+        if (evt.getPropertyName().equals("floor")) {//todo replace it with switch
             this.setFloor((Floor) evt.getNewValue());
             int floorNumber = floor.getFloorNumber();
             this.setTranslateY(floorNumber * Config.FLOOR_HEIGHT);

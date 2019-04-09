@@ -22,7 +22,7 @@ public class FloorView extends HBox {
                 "-fx-border-color: blue;");
         this.setHeight(Config.FLOOR_HEIGHT);
         this.setPrefHeight(Config.FLOOR_HEIGHT);
-        this.setWidth(400);//TODO poprawić to na responsywną szerokość
+        this.setWidth(400);//TODO make this responsive
         this.setPrefWidth(400);
         this.floor = floor;
     }

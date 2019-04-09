@@ -13,13 +13,12 @@ public class Elevator implements Runnable {
     private String name;
     private LinkedBlockingQueue<Task> newTasks = new LinkedBlockingQueue<>();
     private LinkedBlockingQueue<Person> people = new LinkedBlockingQueue<>();
-    private LinkedBlockingQueue<Task> tasks = new LinkedBlockingQueue<>();//TODO to znowu na zwykłą LinkedList, i ona jest wewnętrzną strukturą windy
+    private LinkedBlockingQueue<Task> tasks = new LinkedBlockingQueue<>();
     private java.lang.Thread thread;
 
     private PropertyChangeSupport support;
 
-    //TODO specjalne pudełko/BlockingQueue? na nowe taski pochodzące z zewnątrz
-    //TODO dodanie ElevatorState, do brana dostepnych wind
+    //TODO add elevatorState for getting available elevators
     public void activate() {
         if (!thread.isAlive()) {
             thread = new Thread(this);
@@ -33,7 +32,7 @@ public class Elevator implements Runnable {
 
     public Elevator(Floor floor, int elevatorNumber) {
         this.floor = floor;
-        this.name = "Winda" + elevatorNumber;
+        this.name = "Elevator" + elevatorNumber;
         this.thread = new Thread("thread" + name);
         support = new PropertyChangeSupport(this);
     }
@@ -180,7 +179,7 @@ public class Elevator implements Runnable {
         return newPassenger;
     }
 
-    private void moveOneStep(Direction current) {//todo jak winda jest pełna i ma jechać 4 pietra, to niech jedzie od razu 4 piertra, a czas poruszania bedzie dłuższy
+    private void moveOneStep(Direction current) {//todo when elevator has to change its level by n, it should move to it directly and moving time should be n times longer
         Floor previousFloor = floor;
         try {
             Thread.sleep(SPEED);
